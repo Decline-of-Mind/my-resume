@@ -71,12 +71,8 @@
 
 				<div class="center-form">
 					<input type="text" id="gh-username" value="octocat" oninput="fetchGitHubInformation()"/>
-					<div id="gh-user-data">
-
-					</div>
-					<div id="gh-repo-data">
-
-					</div>
+					<div id="gh-user-data"></div>
+					<div id="gh-repo-data"></div>
 				</div>
 			</div>
 		</div>
@@ -111,23 +107,7 @@
 			</div>
 		</div>
 	</footer>
-	<script>
-		function initMap() {
-        var map =  new google.maps.Map(document.getElementByID("map"), {
-            zoom: 3,
-            center: {
-                lat: 46.619261,
-                ing: -33.134766
-                }
-            });
-        }
-	</script>
-	<script
-		src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-	</script>
-	<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkLycvKWJy031i9jKA_T6GC5V8JHnijkU&callback=initMap">
-	</script>
+
 </body>
 
 </html>

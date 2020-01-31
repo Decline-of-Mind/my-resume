@@ -1,5 +1,6 @@
-function userInformationHTM(user) {
-    `<h2>${user.name}
+function userInformationHTML(user) {
+   return `
+    <h2>${user.name}
         <span class="small-name">
             (@<a href="${user.html_url}"target="_blank">${user.login}</a>)
         </span>
@@ -22,15 +23,16 @@ function fetchGitHubInformation(event) {
         $("#gh-user-data").html(`<h2>Please enter a Github username</h2>`);
         return;
     }
+
     $("#gh-user-data").html(
         `<div id="loader">
             <img src="assets/css/loader.gif" alt="loading..." />
-            </div>`)
+            </div>`);
 
     $.when(
         $.getJSON(`https://api.github.com/users/${username}`)
     ).then(
-        function (response) {
+        function(response) {
             var userData = response;
             $("#gh-user-data").html(userInformationHTML(userData));
         }, function (errorResponse) {
