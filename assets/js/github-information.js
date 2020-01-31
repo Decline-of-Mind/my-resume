@@ -30,7 +30,7 @@ function fetchGitHubInformation(event) {
             </div>`);
 
     $.when(
-        $.getJSON(`https://api.github.com/users/${username}`)
+        $.getJSON(`https://api.github.com/users/${username}`),
         $.getJSON(`https://api.github.com/users/${username}/repos`)
     ).then(
         function(firstResponse, secondResponse) {
