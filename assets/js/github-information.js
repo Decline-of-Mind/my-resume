@@ -7,7 +7,7 @@ function userInformationHTML(user) {
     </h2>
     <div class="gh-content">
         <div class="gh-avatar">
-            <a href="${user.html_url} target="_blank">
+            <a href="${user.html_url}" target="_blank">
                 <img src="${user.avatar_url}" width="80" height="80" alt="${user.login}" />
             </a>
         </div>
@@ -58,7 +58,7 @@ function fetchGitHubInformation(event) {
             var userData = firstResponse[0];
             var repoData = secondResponse[0];
             $("#gh-user-data").html(userInformationHTML(userData));
-            $("#gh-repo-data").html(userInformationHTML(repoData));
+            $("#gh-repo-data").html(repoInformationHTML(repoData));
         }, function (errorResponse) {
             if (errorResponse.status === 404) {
                 $("#gh-user-data").html(`<h2>No info found for user ${username}</h2>`);
